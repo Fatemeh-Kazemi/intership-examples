@@ -1,13 +1,13 @@
 const headerMenu = [
-  { title: "صفحه اصلی", link: "#", children: [] },
-  { title: "بیمه مسافرتی", link: "#", children: [] },
-  { title: "سفرهای من", link: "#", children: [] },
+  { title: "صفحه اصلی", to: "/", children: [] },
+  { title: "فیلتر بلیط ها", to: "/result", children: [] },
+  { title: "سفرهای من", to: "#", children: [] },
   {
     title: "سایر موارد",
-    link: "#",
+    to: "#",
     children: [
-      { title: "اکانت شما", link: "#", children: [] },
-      { title: "علاقه مندی ها", link: "#", children: [] },
+      { title: "اکانت شما", to: "#", children: [] },
+      { title: "علاقه مندی ها", to: "#", children: [] },
     ],
   },
 ];
