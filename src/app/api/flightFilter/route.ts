@@ -1,4 +1,4 @@
-import { type NextRequest } from 'next/server'
+import { type NextRequest } from "next/server";
 
 const flightFilter = [
   {
@@ -165,26 +165,30 @@ const flightFilter = [
   },
 ];
 
-    export function GET(request: NextRequest) {
-        const searchParams = request.nextUrl.searchParams;
-        const from = searchParams.get('from');
-        const to = searchParams.get('to');
-        const date = searchParams.get('date');
-        const passengerCount = searchParams.get('passengerCount');
-        const flightClass = searchParams.get('flightClass');
-        
-        if (!from || !to || !date || !passengerCount || !flightClass) {
-            return new Response("لطفاً همه پارامترهای جستجو را وارد کنید", { status: 400 });
-        }
-        else{
-            const filteredFlights = flightFilter.filter(flight => 
-                flight.from === from &&
-                flight.to === to &&
-                flight.date === date &&
-                flight.passCount === passengerCount &&
-                flight.flightType === flightClass
-            );
-    
-            return new Response(JSON.stringify(filteredFlights), { status: 200 });
-        }
-    }
+export function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const from = searchParams.get("from");
+  const to = searchParams.get("to");
+  const date = searchParams.get("date");
+  const passengerCount = searchParams.get("passengerCount");
+  const flightClass = searchParams.get("flightClass");
+
+  if (from || to || date || passengerCount || flightClass) {
+    const filteredFlights = flightFilter.filter(
+      (flight) =>
+        flight.from == from ||
+        flight.to == to ||
+        flight.date == date ||
+        flight.passCount == passengerCount ||
+        flight.flightType == flightClass
+    );
+
+    const jsonResponse = JSON.stringify(filteredFlights);
+    return new Response(jsonResponse, { status: 200 });
+
+  } else {
+    return new Response("else", {
+      status: 400,
+    });
+  }
+}

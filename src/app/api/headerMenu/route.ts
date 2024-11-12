@@ -1,7 +1,7 @@
 const headerMenu = [
   { title: "صفحه اصلی", to: "/", children: [] },
-  { title: "فیلتر بلیط ها", to: "/result", children: [] },
-  { title: "سفرهای من", to: "#", children: [] },
+  { title: "فیلتر بلیط ها", to: "/filter", children: [] },
+  { title: "همراه ما" , to: "/us", children: [] },
   {
     title: "سایر موارد",
     to: "#",
