@@ -1,13 +1,13 @@
 const headerMenu = [
   { title: "صفحه اصلی", to: "/", children: [] },
-  { title: "فیلتر بلیط ها", to: "/filter", children: [] },
+  { title: "همه پروازها", to: "/filter", children: [] },
   { title: "همراه ما" , to: "/us", children: [] },
   {
     title: "سایر موارد",
-    to: "#",
+    to: "/",
     children: [
       { title: "اکانت شما", to: "#", children: [] },
-      { title: "علاقه مندی ها", to: "#", children: [] },
+      { title: "مراحل خرید بلیط", to: "steps", children: [] },
     ],
   },
 ];
