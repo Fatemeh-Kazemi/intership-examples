@@ -2,12 +2,11 @@ import flightsData from "../mock/mockFlightData"
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const city = searchParams.get("from");
+  const id = searchParams.get("id");
 
-  const filteredFlights = flightsData.filter((flight) => flight.from === city);
+  const filteredFlight = flightsData.filter((flight) => flight.id === id);
 
   return Response.json({
-    results: filteredFlights,
+    results: filteredFlight,
   });
 }
-
